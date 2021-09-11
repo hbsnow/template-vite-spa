@@ -3,7 +3,11 @@
 const config = {
   testEnvironment: "jsdom",
   collectCoverage: true,
-  collectCoverageFrom: ["**/*.{ts,tsx}", "!**/*.d.ts"],
+  collectCoverageFrom: [
+    "<rootDir>/src/**/*.{js,jsx,ts,tsx}",
+    "!<rootDir>/src/**/*.d.ts",
+    "!**/node_modules/**",
+  ],
   setupFilesAfterEnv: ["<rootDir>/.jest/setup.ts"],
   testPathIgnorePatterns: ["/node_modules/"],
 };
