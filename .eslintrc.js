@@ -29,6 +29,8 @@ const config = {
   ],
   plugins: ["@typescript-eslint", "react", "react-hooks", "import", "jest"],
   rules: {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
     "import/order": [
       "error",
       {
