@@ -20,19 +20,19 @@ const config = {
     amd: true,
     node: true,
   },
+  plugins: ["@typescript-eslint", "react", "import", "jest"],
   extends: [
     "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:jest/recommended",
     "prettier",
   ],
-  plugins: ["@typescript-eslint", "react", "react-hooks", "import", "jest"],
   rules: {
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": ["error"],
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "error",
     "import/order": [
       "error",
       {
