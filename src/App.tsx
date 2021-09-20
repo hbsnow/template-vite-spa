@@ -3,7 +3,7 @@ import React from "react";
 import { Button } from "./components/Button";
 import { useCount } from "./hooks/useCount";
 
-export const App = () => {
+export const App = (): JSX.Element => {
   const [count, { countUp, countDown }] = useCount();
 
   return (
