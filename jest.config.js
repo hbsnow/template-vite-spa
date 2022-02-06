@@ -5,6 +5,7 @@ const config = {
   collectCoverage: true,
   collectCoverageFrom: [
     "<rootDir>/src/**/*.{js,jsx,ts,tsx}",
+    "!<rootDir>/src/**/*.stories.{js,jsx,ts,tsx}",
     "!<rootDir>/src/**/*.d.ts",
     "!**/node_modules/**",
   ],
