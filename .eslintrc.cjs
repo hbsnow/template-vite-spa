@@ -20,14 +20,13 @@ const config = {
     amd: true,
     node: true,
   },
-  plugins: ["@typescript-eslint", "react", "import", "jest"],
+  plugins: ["@typescript-eslint", "react", "import"],
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:jest/recommended",
     "prettier",
   ],
   rules: {
