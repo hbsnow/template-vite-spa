@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef, forwardRef, PropsWithChildren } from "react";
 
-export type Props = Readonly<
+type Props = Readonly<
   PropsWithChildren<Omit<ComponentPropsWithoutRef<"button">, "className">>
 >;
 

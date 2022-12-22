@@ -1,16 +1,6 @@
 import { useCallback, useState } from "react";
 
-type ReturnType = Readonly<
-  [
-    number,
-    {
-      countUp: () => void;
-      countDown: () => void;
-    }
-  ]
->;
-
-export const useCount = (initialValue = 0): ReturnType => {
+export const useCount = (initialValue = 0) => {
   const [count, setCount] = useState(initialValue);
 
   const countUp = useCallback(() => {
