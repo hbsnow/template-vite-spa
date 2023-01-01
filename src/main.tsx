@@ -4,14 +4,27 @@ import { createRoot } from "react-dom/client";
 
 import { App } from "./App";
 
-const container = document.getElementById("root");
-if (!container) {
-  throw new Error("Failed to find the root element");
-}
+const enableMsw = import.meta.env.DEV && import.meta.env.VITE_MSW === "true";
 
-const root = createRoot(container);
-root.render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-);
+const main = async () => {
+  if (enableMsw) {
+    const { setupWorker } = await import("msw");
+    const { handlers } = await import("./mocks/handlers");
+
+    const worker = setupWorker(...handlers);
+    await worker.start({ onUnhandledRequest: "bypass" });
+  }
+
+  const root = document.getElementById("root");
+  if (!root) {
+    throw new Error("Failed to find the root element");
+  }
+
+  createRoot(root).render(
+    <StrictMode>
+      <App />
+    </StrictMode>
+  );
+};
+
+main();

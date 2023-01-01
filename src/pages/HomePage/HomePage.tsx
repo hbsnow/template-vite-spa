@@ -1,18 +1,22 @@
-import { Button } from "../../components/Button";
-import { useCount } from "../../hooks/useCount";
+import { FC } from "react";
 
-export const HomePage = (): JSX.Element => {
-  const [count, { countUp, countDown }] = useCount();
+import { Link } from "react-router-dom";
 
+export const HomePage: FC = () => {
   return (
-    <div>
-      <p>count is: {count}</p>
-      <p>
-        <Button onClick={() => countUp()}>count up</Button>
-      </p>
-      <p>
-        <Button onClick={() => countDown()}>count down</Button>
-      </p>
-    </div>
+    <main>
+      <section>
+        <h2>Menu</h2>
+
+        <ul>
+          <li>
+            <Link to="/counter">counter</Link>
+          </li>
+          <li>
+            <Link to="/users">users</Link>
+          </li>
+        </ul>
+      </section>
+    </main>
   );
 };

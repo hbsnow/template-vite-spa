@@ -1,9 +1,9 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { HomePage } from ".";
+import HomePage from ".";
 
 export default {
-  title: "Example/HomePage",
+  title: "Page/HomePage",
   component: HomePage,
 } as ComponentMeta<typeof HomePage>;
 

@@ -1,4 +1,5 @@
 import { act, renderHook } from "@testing-library/react";
+import { describe, it, expect } from "vitest";
 
 import { useCount } from "./useCount";
 
@@ -9,7 +10,7 @@ describe("useCount", () => {
     expect(result.current[0]).toBe(0);
   });
 
-  test("should increase by 1 when countUp", () => {
+  it("should increase by 1 when countUp", () => {
     const { result } = renderHook(() => useCount(0));
 
     act(() => {
@@ -19,7 +20,7 @@ describe("useCount", () => {
     expect(result.current[0]).toBe(1);
   });
 
-  test("should decrease by 1 when countUp", () => {
+  it("should decrease by 1 when countUp", () => {
     const { result } = renderHook(() => useCount(0));
 
     act(() => {
