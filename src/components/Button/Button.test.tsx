@@ -7,7 +7,7 @@ describe("Button Component", () => {
   it("render the container", () => {
     render(<Button>button</Button>);
 
-    const target = screen.getByTestId("button");
+    const target = screen.getByRole("button");
     expect(target).toHaveTextContent("button");
   });
 });

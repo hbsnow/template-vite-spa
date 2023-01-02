@@ -1,13 +1,18 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import CounterPage from ".";
+import { routerDecorator } from "@/storybook/utils/routerDecorator";
 
-export default {
+type Story = StoryObj<typeof CounterPage>;
+
+const meta: Meta<typeof CounterPage> = {
   title: "Page/CounterPage",
   component: CounterPage,
-} as ComponentMeta<typeof CounterPage>;
+  decorators: [routerDecorator()],
+};
 
-const Template: ComponentStory<typeof CounterPage> = () => <CounterPage />;
+export const Basic: Story = {
+  render: () => <CounterPage />,
+};
 
-export const Default = Template.bind({});
-Default.args = {};
+export default meta;

@@ -5,6 +5,6 @@ type Props = Readonly<
 >;
 
 export const Button = forwardRef<HTMLButtonElement, Props>((props, ref) => {
-  return <button ref={ref} data-testid="button" {...props} />;
+  return <button ref={ref} {...props} />;
 });
 Button.displayName = "Button";

@@ -1,13 +1,18 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import HomePage from ".";
+import { routerDecorator } from "@/storybook/utils/routerDecorator";
 
-export default {
+type Story = StoryObj<typeof HomePage>;
+
+const meta: Meta<typeof HomePage> = {
   title: "Page/HomePage",
   component: HomePage,
-} as ComponentMeta<typeof HomePage>;
+};
 
-const Template: ComponentStory<typeof HomePage> = () => <HomePage />;
+export const Basic: Story = {
+  render: () => <HomePage />,
+  decorators: [routerDecorator()],
+};
 
-export const Default = Template.bind({});
-Default.args = {};
+export default meta;
