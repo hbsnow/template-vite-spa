@@ -1,17 +1,17 @@
 import type { Decorator } from "@storybook/react";
 import {
   createMemoryRouter,
-  LoaderFunction,
+  NonIndexRouteObject,
   RouterProvider,
 } from "react-router-dom";
 
-export const routerDecorator: (loader?: LoaderFunction) => Decorator = (
-  loader
-) => {
+type Route = Omit<NonIndexRouteObject, "path">;
+
+export const routerDecorator: (route?: Route) => Decorator = (route) => {
   const decorator: Decorator = (Story) => {
     return (
       <RouterProvider
-        router={createMemoryRouter([{ path: "*", element: Story(), loader }])}
+        router={createMemoryRouter([{ path: "*", element: Story(), ...route }])}
       />
     );
   };

@@ -12,7 +12,7 @@ const meta: Meta<typeof UsersPage> = {
 
 export const Basic: Story = {
   render: () => <UsersPage />,
-  decorators: [routerDecorator(loader)],
+  decorators: [routerDecorator({ loader })],
 };
 
 export default meta;
