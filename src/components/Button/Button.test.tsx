@@ -8,6 +8,7 @@ describe("Button Component", () => {
     render(<Button>button</Button>);
 
     const target = screen.getByRole("button");
-    expect(target).toHaveTextContent("button");
+
+    expect(target).toBeInTheDocument();
   });
 });

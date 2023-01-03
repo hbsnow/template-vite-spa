@@ -9,7 +9,7 @@ export const delay = (
   duration?: Parameters<RestContext["delay"]>[0]
 ): ResponseTransformer => {
   if (import.meta.env.MODE === "test") {
-    return compose(context.delay());
+    return compose(context.delay(0));
   }
 
   return compose(context.delay(duration));
