@@ -6,7 +6,7 @@ import { routerDecorator } from "@/storybook/utils/routerDecorator";
 type Story = StoryObj<typeof HomePage>;
 
 const meta: Meta<typeof HomePage> = {
-  title: "Page/HomePage",
+  title: "Pages/HomePage",
   component: HomePage,
 };
 

@@ -6,7 +6,7 @@ import { routerDecorator } from "@/storybook/utils/routerDecorator";
 type Story = StoryObj<typeof CounterPage>;
 
 const meta: Meta<typeof CounterPage> = {
-  title: "Page/CounterPage",
+  title: "Pages/CounterPage",
   component: CounterPage,
   decorators: [routerDecorator()],
 };
