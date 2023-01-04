@@ -8,7 +8,7 @@ export const App: FC = () => {
   const router = createBrowserRouter(routes);
 
   return (
-    <Suspense fallback="loading">
+    <Suspense fallback="global loading">
       <RouterProvider
         router={router}
         fallbackElement={<>fallbackElement Loading</>}

@@ -15,6 +15,9 @@ export const HomePage: FC = () => {
           <li>
             <Link to="/users">users</Link>
           </li>
+          <li>
+            <Link to="/wrong">wrong</Link>
+          </li>
         </ul>
       </section>
     </main>

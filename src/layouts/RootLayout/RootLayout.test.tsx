@@ -14,14 +14,16 @@ vi.mock("react-router-dom", async () => {
   );
   return {
     ...actual,
-    useNavigation: vi.fn().mockReturnValue({
-      formAction: undefined,
-      formData: undefined,
-      formEncType: undefined,
-      formMethod: undefined,
-      location: undefined,
-      state: "idle",
-    }),
+    useNavigation: vi
+      .fn<unknown[], ReturnType<typeof useNavigation>>()
+      .mockReturnValue({
+        formAction: undefined,
+        formData: undefined,
+        formEncType: undefined,
+        formMethod: undefined,
+        location: undefined,
+        state: "idle",
+      }),
   };
 });
 
