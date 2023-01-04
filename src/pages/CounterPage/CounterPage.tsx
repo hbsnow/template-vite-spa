@@ -2,14 +2,14 @@ import { FC } from "react";
 
 import { Link } from "react-router-dom";
 
-import { Button } from "@/components/Button";
+import { Button } from "@/cores/Button";
 import { useCount } from "@/hooks/useCount";
 
 export const CounterPage: FC = () => {
   const [count, { countUp, countDown }] = useCount();
 
   return (
-    <div>
+    <main>
       <nav>
         <Link to="/">戻る</Link>
       </nav>
@@ -21,6 +21,6 @@ export const CounterPage: FC = () => {
           <Button onClick={() => countDown()}>count down</Button>
         </p>
       </section>
-    </div>
+    </main>
   );
 };

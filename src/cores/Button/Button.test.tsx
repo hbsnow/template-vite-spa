@@ -7,7 +7,7 @@ afterEach(() => {
   cleanup();
 });
 
-describe("Button Component", () => {
+describe("Button component", () => {
   it("render the container", () => {
     render(<Button>button</Button>);
 

@@ -32,7 +32,7 @@ export const UsersPage: FC = () => {
   const { users, date } = useLoaderData() as LoaderData;
 
   return (
-    <div>
+    <main>
       <nav>
         <Link to="/">戻る</Link>
       </nav>
@@ -51,6 +51,6 @@ export const UsersPage: FC = () => {
           </Await>
         </Suspense>
       </section>
-    </div>
+    </main>
   );
 };

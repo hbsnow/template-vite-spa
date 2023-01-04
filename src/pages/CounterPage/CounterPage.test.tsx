@@ -7,7 +7,7 @@ afterEach(() => {
   cleanup();
 });
 
-describe("CounterPage", () => {
+describe("CounterPage component", () => {
   it("should view `/counter`", async () => {
     render(
       <TestingContainer routerOptions={{ initialEntries: ["/counter"] }} />

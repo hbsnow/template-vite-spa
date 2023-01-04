@@ -17,7 +17,7 @@ afterAll(() => {
   server.close();
 });
 
-describe("UserPage", () => {
+describe("UsersPage component", () => {
   it("should view `/users`", async () => {
     render(<TestingContainer routerOptions={{ initialEntries: ["/users"] }} />);
 

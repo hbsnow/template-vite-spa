@@ -7,7 +7,7 @@ afterEach(() => {
   cleanup();
 });
 
-describe("Date Component", () => {
+describe("Date component", () => {
   it("render the container", () => {
     render(<DatePresenter date="2023-01-03T06:53:40.944Z" />);
 
