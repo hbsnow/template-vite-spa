@@ -1,7 +1,11 @@
-import { render, screen } from "@testing-library/react";
-import { describe, it, expect } from "vitest";
+import { cleanup, render, screen } from "@testing-library/react";
+import { describe, it, expect, afterEach } from "vitest";
 
 import { TestingContainer } from "@/tests/utils/TestingContainer";
+
+afterEach(() => {
+  cleanup();
+});
 
 describe("CounterPage", () => {
   it("should view `/counter`", async () => {

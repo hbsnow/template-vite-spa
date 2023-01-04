@@ -1,14 +1,16 @@
-import { render, screen } from "@testing-library/react";
-import { describe, it, expect } from "vitest";
+import { cleanup, render, screen } from "@testing-library/react";
+import { describe, it, expect, afterEach } from "vitest";
 
 import { Button } from ".";
+
+afterEach(() => {
+  cleanup();
+});
 
 describe("Button Component", () => {
   it("render the container", () => {
     render(<Button>button</Button>);
 
-    const target = screen.getByRole("button");
-
-    expect(target).toBeInTheDocument();
+    expect(screen.getByRole("button")).toBeInTheDocument();
   });
 });

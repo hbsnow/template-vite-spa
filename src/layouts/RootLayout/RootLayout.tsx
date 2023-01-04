@@ -3,11 +3,11 @@ import { FC } from "react";
 import { Outlet, useNavigation } from "react-router-dom";
 
 export const RootLayout: FC = () => {
-  const navigation = useNavigation();
+  const { state } = useNavigation();
 
   return (
     <>
-      {navigation.state === "loading" && <div>Loading</div>}
+      {state === "loading" && <div>Loading</div>}
       <header>
         <h1>
           Template Vite <abbr>SPA</abbr>

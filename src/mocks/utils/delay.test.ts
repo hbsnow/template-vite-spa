@@ -12,24 +12,24 @@ import {
 import { delay } from "./delay";
 
 vi.mock("msw", async () => {
-  const msw = await vi.importActual<typeof import("msw")>("msw");
+  const actual = await vi.importActual<typeof import("msw")>("msw");
   return {
-    ...msw,
+    ...actual,
     context: { delay: vi.fn() },
   };
 });
 
+const originalViteEnvMode = import.meta.env.MODE;
+
+beforeEach(() => {
+  import.meta.env.MODE = originalViteEnvMode;
+});
+
+afterEach(() => {
+  vi.clearAllMocks();
+});
+
 describe("delay", () => {
-  const originalViteEnvMode = import.meta.env.MODE;
-
-  beforeEach(() => {
-    import.meta.env.MODE = originalViteEnvMode;
-  });
-
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   it("should be used 0 set to the argument when development", () => {
     import.meta.env.MODE = "development";
     const delayMock = (context as Mocked<typeof context>).delay;
