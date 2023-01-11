@@ -1,18 +1,17 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { DatePresenter } from "./Date";
+import { Date } from "./Date";
+import { routerDecorator } from "@/storybook/utils/routerDecorator";
 
-type Story = StoryObj<typeof DatePresenter>;
+type Story = StoryObj<typeof Date>;
 
-const meta: Meta<typeof DatePresenter> = {
+const meta: Meta<typeof Date> = {
   title: "Components/Date",
-  component: DatePresenter,
+  component: Date,
 };
 
 export const Basic: Story = {
-  args: {
-    date: "2023-01-03T06:53:40.944Z",
-  },
+  decorators: [routerDecorator()],
 };
 
 export default meta;
