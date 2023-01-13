@@ -15,7 +15,10 @@ vi.mock("msw", async () => {
   const actual = await vi.importActual<typeof import("msw")>("msw");
   return {
     ...actual,
-    context: { delay: vi.fn() },
+    context: {
+      ...actual.context,
+      delay: vi.fn(),
+    },
   };
 });
 
