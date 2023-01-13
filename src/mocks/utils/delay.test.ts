@@ -53,7 +53,7 @@ describe("delay", () => {
     expect(delayMock.mock.calls[0][0]).toBeUndefined();
   });
 
-  it("should use 0 when test", () => {
+  it("should be used 0 when test", () => {
     const delayMock = (context as Mocked<typeof context>).delay;
 
     delay(100);
